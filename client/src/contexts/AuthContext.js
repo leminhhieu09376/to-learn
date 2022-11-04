@@ -8,7 +8,7 @@ export const AuthContext = createContext()
 
 const AuthContextProvider = ({ children }) => {
     const [authState, dispatch] = useReducer(authReducer, {
-        authLoading: true,
+        authLoading: false,
         isAuthenticated: false,
         user: null
     })
@@ -31,7 +31,7 @@ const AuthContextProvider = ({ children }) => {
             setAuthToken(null)
             dispatch({
                 type: 'SET_AUTH',
-                payload: { isAuthenticated: false, user: null, authLoading: false, }
+                payload: { isAuthenticated: false, user: null }
             })
         }
     }
