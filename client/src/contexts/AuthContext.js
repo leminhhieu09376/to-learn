@@ -31,7 +31,7 @@ const AuthContextProvider = ({ children }) => {
             setAuthToken(null)
             dispatch({
                 type: 'SET_AUTH',
-                payload: { isAuthenticated: false, user: null }
+                payload: { isAuthenticated: false, user: null, authLoading: false, }
             })
         }
     }
