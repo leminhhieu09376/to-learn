@@ -12,7 +12,7 @@ const PostContextProvider = ({ children }) => {
     const [postState, dispatch] = useReducer(postReducer, {
         post: null,
         posts: [],
-        postsLoading: true
+        postsLoading: false
     })
     const [showAddPostModal, setShowAddPostModal] = useState(false)
     const [showUpdatePostModal, setShowUpdatePostModal] = useState(false)
