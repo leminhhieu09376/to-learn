@@ -14,14 +14,14 @@ const AuthContextProvider = ({ children }) => {
     })
     //CAuthenticated user
     const loadUser = async () => {
-        console.log("loadUser")
+
         if (localStorage[LOCAL_STORAGE_TOKEN_NAME]) {
             setAuthToken(localStorage[LOCAL_STORAGE_TOKEN_NAME])
         }
 
         try {
             const response = await axios.get(`${apiUrl}/auth`)
-            console.log(response)
+
             if (response.data.success) {
                 dispatch({
                     type: 'SET_AUTH',
@@ -39,7 +39,7 @@ const AuthContextProvider = ({ children }) => {
         }
     }
     // useEffect(() => loadUser(), [])
-    useEffect(() => async function fetchData() {
+    useEffect(() => {
         loadUser()
     }, [])
 

@@ -33,7 +33,7 @@ const Dashboard = () => {
     // Start: Get all posts
 
 
-    useEffect(() => async function fetchData() {
+    useEffect(() => {
         getPosts()
     }, [])
 
